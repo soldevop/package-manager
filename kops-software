@@ -1,5 +1,19 @@
- 	#Install wget if not installed
+# Install wget if not installed
  	sudo apt install wget -y
- 	sudo wget https://github.com/kubernetes/kops/releases/download/v1.22.0/kops-linux-amd64
+  
+# AWS cli installation 
+  curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+  sudo apt -y install unzip python
+  sudo unzip awscli-bundle.zip
+  sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+  sudo apt -y install awscli
+
+# KOPS installation
+  sudo wget https://github.com/kubernetes/kops/releases/download/v1.22.0/kops-linux-amd64
  	sudo chmod +x kops-linux-amd64
  	sudo mv kops-linux-amd64 /usr/local/bin/kops
+
+# kubectl installation
+  sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+  chmod +x ./kubectl
+  sudo mv ./kubectl /usr/local/bin/kubectl
