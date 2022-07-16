@@ -1,4 +1,4 @@
-sudo apt update
+sudo apt -y update
 sudo apt -y install openjdk-11-jdk
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
@@ -11,4 +11,3 @@ curl ifconfig.co    # to get the ip
 # now run in the browser
 # ip:8080 to get to jenkins setup page
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword # input the value in the browser when asked the admin password
-
