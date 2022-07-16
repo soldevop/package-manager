@@ -1,5 +1,5 @@
-# Install wget if not installed
- 	sudo apt install wget -y
+# Install wget if not installed 
+  sudo apt install wget -y
   
 # AWS cli installation 
   curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
