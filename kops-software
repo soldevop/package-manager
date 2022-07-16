@@ -10,8 +10,8 @@
 
 # KOPS installation
   sudo wget https://github.com/kubernetes/kops/releases/download/v1.22.0/kops-linux-amd64
- 	sudo chmod +x kops-linux-amd64
- 	sudo mv kops-linux-amd64 /usr/local/bin/kops
+  sudo chmod +x kops-linux-amd64
+  sudo mv kops-linux-amd64 /usr/local/bin/kops
 
 # kubectl installation
   sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
