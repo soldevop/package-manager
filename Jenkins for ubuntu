@@ -5,7 +5,7 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins
 sudo apt update
 sudo apt -y install jenkins
 sudo systemctl status jenkins
-$ sudo echo “jenkins ALL=(ALL) NOPASSWD: ALL” | tee /etc/sudoers.d/jenkins  # adding jenkins user to the sudoers
+sudo echo “jenkins ALL=(ALL) NOPASSWD: ALL” | tee /etc/sudoers.d/jenkins  # adding jenkins user to the sudoers
 sudo ufw allow 8080
 sudo ufw enable
 sudo ufw status  
