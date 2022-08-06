@@ -1,0 +1,18 @@
+# Permission denied (publickey,gssapi-keyex,gssapi-with-mic)
+# need to configure the /etc/ssh/sshd_config file
+1- first option
+In the file, find the PasswordAuthentication line and make sure it ends with yes.
+Find the ChallengeResponseAuthentication option and disable it by adding no.
+
+then run 
+sudo systemctl restart sshd
+
+2- second option
+in the same /etc/ssh/sshd_config file, make sure the following options are set as follows:
+
+PermitRootLogin no
+PubkeyAuthentication yes
+GSSAPIAuthentication yes
+GSSAPICleanupCredentials no
+UsePAM yes
+sudo systemctl restart sshd
