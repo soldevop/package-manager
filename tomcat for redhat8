@@ -1,0 +1,17 @@
+#! /bin/bash
+# switch to /opt before starting the installation since this is
+# our home directory in Dominion Systems
+# install Java JDK 1.8+ as a prerequisite for tomcat to run.
+sudo yum install git wget -y
+sudo wget https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.tar.gz
+sudo yum -y install java
+# Download tomcat software and extract it.
+sudo yum install wget unzip -y
+sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.63/bin/apache-tomcat-9.0.68.tar.gz
+sudo tar -xvf apache-tomcat-9.0.68.tar.gz
+sudo rm apache-tomcat-9.0.68.tar.gz
+sudo mv apache-tomcat-9.0.68 tomcat9
+sudo chmod 777 -R /opt/tomcat9
+sudo sh /opt/tomcat9/bin/startup.sh
+# create a soft link to start and stop tomcat
+sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
