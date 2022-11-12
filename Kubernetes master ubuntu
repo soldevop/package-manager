@@ -67,5 +67,9 @@ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl versio
 #if the top line for netork does not work, use
 kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 
+
+# calico can also be used wih the following line:
+curl https://docs.projectcalico.org/manifests/calico.yaml -O && kubectl apply -f calico.yaml
+
 # IN CASE THE CLUSTER TOKEN NEEDS TO BE RECREATED, USE
 kubeadm token create --print-join-command
